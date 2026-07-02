@@ -1,7 +1,5 @@
 //folder-1
 import { createServer, IncomingMessage, Server } from "http";
-import { json } from "stream/consumers";
-
 const server:Server = createServer ((req:IncomingMessage, res)=> {
     // console.log(req.url) //route like "/", "/home", "/about", "facebook"
     // console.log(req.method);//there are 4 method in node.js like get , post , delete ,patch or put
@@ -32,9 +30,7 @@ const server:Server = createServer ((req:IncomingMessage, res)=> {
     }
      else{
         res.writeHead(404, {"content-type": "application/json"})
-        res.end(JSON.stringify({message: "Route not found "}))
-
-
+        res.end(JSON.stringify({message: "Route not foundd "}))
     }
 })
 
