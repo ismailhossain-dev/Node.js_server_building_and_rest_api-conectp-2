@@ -1,5 +1,6 @@
 //file-2 all route handle korboe ekane 
 import type { IncomingMessage, ServerResponse } from "http";
+import { productController } from "../controller/product.controller";
 //just routeHandler file ta route.ts call divo 
 export const routeHandler = (req: IncomingMessage, res:ServerResponse)=> {
 const url = req.url ; 
@@ -11,8 +12,8 @@ const url = req.url ;
     
     }
     else if(url?.startsWith("/products")){
-       res.writeHead(404, {"content-type": "application/json"})
-        res.end(JSON.stringify({message: "This is a product route "}))
+      //product controller file req, and response ta handl korbo 
+      productController(req, res)
     }
      else{
         res.writeHead(404, {"content-type": "application/json"})
