@@ -1,5 +1,6 @@
 //file-3 ekane just product route data handle kora hobe
 import type { IncomingMessage, ServerResponse } from "http";
+import { readProduct } from "../service/product.service";
 
 //req er mardome client teke data asbe
 export const productController = (req:IncomingMessage, res:ServerResponse)=> {
@@ -13,6 +14,7 @@ const products  = [
         name:"product -1", 
     }
 ]
+readProduct()
  res.writeHead(200, {"content-type":"application/json"})
 res.end(JSON.stringify({message: "This is a product route", data: products}))
 }
