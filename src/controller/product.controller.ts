@@ -14,7 +14,10 @@ const products  = [
         name:"product -1", 
     }
 ]
-readProduct()
+//product.service route call
+const product = readProduct()
+
+//console.log("product controller route", product);//succss
  res.writeHead(200, {"content-type":"application/json"})
 res.end(JSON.stringify({message: "This is a product route", data: products}))
 }
